@@ -1,0 +1,23 @@
+/* BOX SIZING */
+
+*, *:after, *:before{
+	box-sizing: border-box;
+}
+
+
+/* FONTES */
+
+$fonte-comum: 'Roboto', sans-serif;
+$fonte-especial: 'Quentin', cursive;
+
+
+/* CORES */
+
+$rosa: #d2a2a2;
+$bege: #b99d84;
+$azul-botoes: #eef5f7;
+$texto-footer: #6f7580; 
+$azul: #84b7b9;
+$azul-texto: #5a5e66;
+$azul-footer: #4b515b;
+$azul-footer2: #40464f;
