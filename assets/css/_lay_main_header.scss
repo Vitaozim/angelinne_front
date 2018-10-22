@@ -1,0 +1,106 @@
+#cabecalho-principal{
+	width: 100%;
+	padding-top: 3em;
+	
+	background-image: 
+		url(../media/aquarela_topo.png),
+		url(../media/enfeites_topo.png),
+		url(../media/pattern_papel.jpg);
+	background-size: 
+		2100px auto,
+		1200px auto,
+		auto;
+	background-position: 
+		top center,
+		top center,
+		top left;
+	background-repeat: 
+		no-repeat,
+		no-repeat,
+		repeat;
+
+	@media screen and (max-width: $tamanho-note){
+		background-size: 
+			175% auto,
+			100% auto,
+			auto;
+	}
+
+	@media screen and (max-width: $tamanho-tablet-vertical){
+		background-size: 
+			1400px auto,
+			800px auto,
+			auto;
+	}
+
+	@media screen and (max-width: $tamanho-smartphone){
+		background-size: 
+			1050px auto,
+			600px auto,
+			auto;
+	}
+
+
+
+	&:before{
+		content: none;
+	}
+
+	.container{
+		@include display(flex);
+		@include justify-content(space-between);
+	}
+
+	a.logo{
+		width: 30%;
+		display: block;
+		img{
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	ul.menu{
+		width: 65%;
+		@include display(flex);
+		@include justify-content(flex-end);
+		@include align-items(flex-start);
+		padding-top: 4em;
+		li{
+			margin-right: 2.2em;
+			&:last-child{margin-right: 0;}
+			a{
+				text-decoration: none;
+				color: inherit;
+				font-size: 0.85em;
+				i{
+					display: block;
+					text-align: center;
+					color: $azul;
+					font-size: 1.2em;
+					margin-bottom: 10px;
+					@include transition(color 0.2s linear);
+				}
+				p{
+					text-transform: uppercase;
+					@include transition(color 0.2s linear);
+				}
+			}
+
+			&.atual{
+				a{
+					i{color: $rosa;}
+					p{font-weight: bold;}
+				}
+			}
+
+			&:hover{
+				a{
+					i{color: $rosa}
+					p{color: $rosa}
+				}
+			}
+		}
+	}
+}

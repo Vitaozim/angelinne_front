@@ -1,7 +1,14 @@
+$output-bourbon-deprecation-warnings: false !default;
+
 @charset 'UTF-8';
 
 @import 'bourbon/bourbon';
-@import 'reset';
 @import 'fontface';
+@import 'reset';
 @import 'padroes';
 
+@import 'lay_main_header';
+@import 'lay_slider';
+@import 'lay_acesso_rapido';
+@import 'lay_sobre';
+@import 'lay_produtos_destaque';

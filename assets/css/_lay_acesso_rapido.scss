@@ -1,0 +1,40 @@
+#acesso-rapido{
+	padding: 3em 0;
+	& > .container{
+		section{
+
+			&:nth-child(1){
+				background-image: url(../media/wash_azul1.png);
+				.icone{
+					background-color: $azul;
+				}
+				a{
+					color: $azul;
+					box-shadow: 2px 2px 0px 0px transparentize($azul, 0.5);
+				}
+			}
+
+			&:nth-child(2){
+				background-image: url(../media/wash_amarelo.png);
+				.icone{
+					background-color: $bege;
+				}
+				a{
+					color: $bege;
+					box-shadow: 2px 2px 0px 0px transparentize($bege, 0.5);
+				}
+			}
+
+			&:nth-child(3){
+				background-image: url(../media/wash_vermelho.png);
+				.icone{
+					background-color: $rosa;
+				}
+				a{
+					color: $rosa;
+					box-shadow: 2px 2px 0px 0px transparentize($rosa, 0.5);
+				}
+			}
+		}
+	}
+}

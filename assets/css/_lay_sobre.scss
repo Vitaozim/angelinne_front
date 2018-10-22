@@ -1,0 +1,50 @@
+#sobre{
+	padding: 4em 0;
+	& > .container{
+		img.foto-autora{
+			width: 45%;
+			height: auto;
+		}
+
+		article{
+			h2.nome-autora{
+				font-family: $fonte-especial;
+				font-size: 3em;
+				line-height: 1;
+				text-align: center;
+				&:before{
+					content: "";
+					width: 150px;
+					height: 40px;
+					margin: 0 auto;
+					background-image: url(../media/sprite_fro.png);
+					background-repeat: no-repeat;
+					background-size: 188% auto;
+					display: block;
+				}
+			}
+
+			h3.titulacao{
+				font-size: 1.3em;
+				text-align: center;
+				color: $bege;
+				font-style: italic;
+				margin-bottom: 1.5em;
+			}
+
+			p{
+				margin-bottom: 1em;
+			}
+			a{
+				display: block;
+				text-align: right;
+				color: $bege;
+				text-decoration: none;
+				font-style: italic;
+				i{
+					color: $azul-texto;
+				}
+			}
+		}
+	}
+}
