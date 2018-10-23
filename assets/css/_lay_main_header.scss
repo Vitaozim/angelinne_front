@@ -59,14 +59,24 @@
 	a.logo{
 		width: 30%;
 		display: block;
+		position: relative;
+		@include transform(translateX(-11%));
 		img{
 			display: block;
 			width: 100%;
 			height: auto;
 		}
 
+		@media screen and (max-width: $tamanho-tablet){
+			width: 40%;
+		}
+
+		@media screen and (max-width: $tamanho-tablet-vertical){
+			width: 35%;
+		}
+
 		@media screen and (max-width: $tamanho-smartphone){
-			width: 200px;
+			width: 240px;
 			max-width: 90%;
 		}
 
@@ -89,7 +99,7 @@
 		padding-bottom: 2em;
 
 		@media screen and (max-width: $tamanho-tablet){
-			padding-bottom: 1em;
+			padding-bottom: 2em;
 		}
 
 		@media screen and (max-width: $tamanho-tablet-vertical){

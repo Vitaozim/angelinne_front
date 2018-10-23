@@ -1,8 +1,10 @@
 section#slider{
 	width: 100%;
-	height: 25vw;
-	background-color: pink;
-	@media screen and (max-width: $tamanho-tablet-vertical){height: 35vw}
-	@media screen and (max-width: $tamanho-smartphone){height: 50vw}
+	height: 40vw;
+	background-image: url(../../placeholders/fotosangela/img1.jpg);
+	background-size: cover;
+	background-position: top center;
+	// @media screen and (max-width: $tamanho-tablet-vertical){height: 35vw}
+	// @media screen and (max-width: $tamanho-smartphone){height: 50vw}
 
 }

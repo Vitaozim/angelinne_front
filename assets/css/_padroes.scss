@@ -1,18 +1,15 @@
 /* BOX SIZING */
-
 *, *:after, *:before{
 	box-sizing: border-box;
 }
 
 
 /* FONTES */
-
 $fonte-comum: 'Roboto', sans-serif;
 $fonte-especial: 'Quentin', cursive;
 
 
 /* CORES */
-
 $rosa: #d2a2a2;
 $bege: #b99d84;
 $azul-botoes: #eef5f7;
@@ -25,7 +22,6 @@ $azul-footer2: #40464f;
 
 
 /* MEDIA QUERIES */
-
 $tamanho-note: 1200px;
 $tamanho-tablet: 1020px;
 $tamanho-tablet-vertical: 820px;
@@ -35,7 +31,6 @@ $tamanho-smart-pequeno: 430px;
 
 
 /* ESTILOS */
-
 html, body{
 	font-size: 16px;
 	line-height: 1.5;
@@ -150,7 +145,6 @@ a.leia-mais{
 }
 
 /* KEYFRAMES */
-
 @include keyframes(aparece){
 	0%{opacity: 0;}
 	100%{opacity: 1;}
