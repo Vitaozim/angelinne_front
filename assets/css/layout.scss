@@ -3,12 +3,18 @@ $output-bourbon-deprecation-warnings: false !default;
 @charset 'UTF-8';
 
 @import 'bourbon/bourbon';
+@import 'jquery.bxslider.min';
 @import 'fontface';
 @import 'reset';
 @import 'padroes';
+@import 'diagramacoes_padrao';
+
 
 @import 'lay_main_header';
 @import 'lay_slider';
+@import 'lay_loja';
 @import 'lay_acesso_rapido';
 @import 'lay_sobre';
 @import 'lay_produtos_destaque';
+@import 'lay_call_blog';
+@import 'lay_rodape';

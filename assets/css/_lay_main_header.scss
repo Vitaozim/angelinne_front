@@ -49,6 +49,11 @@
 	.container{
 		@include display(flex);
 		@include justify-content(space-between);
+		@media screen and (max-width: $tamanho-smartphone){
+			@include flex-direction(column);
+			@include align-items(center);
+		}
+
 	}
 
 	a.logo{
@@ -59,14 +64,54 @@
 			width: 100%;
 			height: auto;
 		}
+
+		@media screen and (max-width: $tamanho-smartphone){
+			width: 200px;
+			max-width: 90%;
+		}
+
+	}
+
+	button.bt-menu{
+		display: none;
+		@media screen and (max-width: $tamanho-smart-pequeno){
+			margin: 1em 0;
+			display: block;
+		}
+
 	}
 
 	ul.menu{
 		width: 65%;
 		@include display(flex);
 		@include justify-content(flex-end);
-		@include align-items(flex-start);
-		padding-top: 4em;
+		@include align-items(flex-end);
+		padding-bottom: 2em;
+
+		@media screen and (max-width: $tamanho-tablet){
+			padding-bottom: 1em;
+		}
+
+		@media screen and (max-width: $tamanho-tablet-vertical){
+			padding-bottom: 0.5em;
+		}
+
+		@media screen and (max-width: $tamanho-smartphone){
+			width: 100%;
+			padding: 0.5em 0;
+			@include justify-content(space-around);
+			@include flex-wrap(wrap);
+			@include align-items(flex-start);
+
+		}
+
+		@media screen and (max-width: $tamanho-smart-pequeno){
+			@include display(none);
+			&.ativo{
+				@include display(flex);
+			}
+		}
+
 		li{
 			margin-right: 2.2em;
 			&:last-child{margin-right: 0;}
@@ -79,7 +124,8 @@
 					text-align: center;
 					color: $azul;
 					font-size: 1.2em;
-					margin-bottom: 10px;
+					margin-bottom: 4px;
+
 					@include transition(color 0.2s linear);
 				}
 				p{
@@ -87,6 +133,37 @@
 					@include transition(color 0.2s linear);
 				}
 			}
+
+			@media screen and (max-width: $tamanho-tablet){
+				margin-right: 1.8em;
+				&:last-child{margin-right: 0;}
+			}
+
+			@media screen and (max-width: $tamanho-tablet-vertical){
+				margin-right: 1.5em;
+				&:last-child{margin-right: 0;}
+			}
+
+			@media screen and (max-width: $tamanho-smart-pequeno){
+				width: 33%;
+				@include display(flex);
+				@include justify-content(center);
+				margin: 0;
+				margin-bottom: 1em;
+				opacity: 0;
+				&:last-child{
+					margin: 0;
+					margin-bottom: 1em;
+				}
+				@include animation(aparece 0.2s linear 0s 1 normal forwards);
+				@for $i from 1 through 6 {
+					&:nth-child(#{$i}) {
+						@include animation-delay(#{ ( $i - 1 ) * 0.07s });
+					}
+				}
+			}
+
+
 
 			&.atual{
 				a{

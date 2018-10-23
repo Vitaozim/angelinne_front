@@ -2,30 +2,26 @@
 	padding: 4em 0;
 	& > .container{
 		img.foto-autora{
+			display: block;
 			width: 45%;
 			height: auto;
+			@media screen and (max-width: $tamanho-tablet-vertical){
+				width: 100%;
+				max-width: 400px;
+				margin: 0 auto;
+			}
 		}
 
 		article{
 			h2.nome-autora{
 				font-family: $fonte-especial;
-				font-size: 3em;
+				// font-size: 3em;
 				line-height: 1;
 				text-align: center;
-				&:before{
-					content: "";
-					width: 150px;
-					height: 40px;
-					margin: 0 auto;
-					background-image: url(../media/sprite_fro.png);
-					background-repeat: no-repeat;
-					background-size: 188% auto;
-					display: block;
-				}
 			}
 
 			h3.titulacao{
-				font-size: 1.3em;
+				font-size: 1.15em;
 				text-align: center;
 				color: $bege;
 				font-style: italic;
@@ -37,13 +33,7 @@
 			}
 			a{
 				display: block;
-				text-align: right;
-				color: $bege;
-				text-decoration: none;
-				font-style: italic;
-				i{
-					color: $azul-texto;
-				}
+				text-align: right;		
 			}
 		}
 	}

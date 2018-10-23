@@ -1,25 +1,9 @@
 #produtos-destaque{
+	padding: 3em 0;
 	& > .container{
 		& > h2{
 			text-align: center;
-			&:before, &:after{
-				content: "";
-				vertical-align: middle;
-				display: inline-block;
-				width: 70px;
-				height: 30px;
-				background-image: url(../media/sprite_fro.png);
-				background-repeat: no-repeat;
-				background-size: 430% auto;
-			}
-
-			&:before{
-				background-position: 0px -45px;
-			}
-
-			&:after{
-				background-position: -90px -45px;
-			}
+			margin-bottom: 1em;
 		}
 	}
 }
