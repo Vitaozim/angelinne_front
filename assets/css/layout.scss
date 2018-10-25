@@ -9,7 +9,6 @@ $output-bourbon-deprecation-warnings: false !default;
 @import 'padroes';
 @import 'diagramacoes_padrao';
 
-
 @import 'lay_main_header';
 @import 'lay_slider';
 @import 'lay_loja';
@@ -17,4 +16,6 @@ $output-bourbon-deprecation-warnings: false !default;
 @import 'lay_sobre';
 @import 'lay_produtos_destaque';
 @import 'lay_call_blog';
+@import 'lay_cursos_vantagens_e_depos';
+@import 'lay_posts';
 @import 'lay_rodape';

@@ -1,5 +1,5 @@
 #acesso-rapido{
-	padding: 3em 0;
+	// padding: 3em 0;
 	& > .container{
 		section{
 
@@ -8,7 +8,7 @@
 				.icone{
 					background-color: $azul;
 				}
-				a{
+				a.saiba-mais{
 					color: $azul;
 					box-shadow: 2px 2px 0px 0px transparentize($azul, 0.5);
 				}
@@ -19,7 +19,7 @@
 				.icone{
 					background-color: $bege;
 				}
-				a{
+				a.saiba-mais{
 					color: $bege;
 					box-shadow: 2px 2px 0px 0px transparentize($bege, 0.5);
 				}
@@ -30,7 +30,7 @@
 				.icone{
 					background-color: $rosa;
 				}
-				a{
+				a.saiba-mais{
 					color: $rosa;
 					box-shadow: 2px 2px 0px 0px transparentize($rosa, 0.5);
 				}

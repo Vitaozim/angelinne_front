@@ -1,5 +1,5 @@
 #sobre{
-	padding: 4em 0;
+	// padding: 4em 0;
 	& > .container{
 		img.foto-autora{
 			display: block;
@@ -18,6 +18,7 @@
 				// font-size: 3em;
 				line-height: 1;
 				text-align: center;
+				margin-bottom: 0;
 			}
 
 			h3.titulacao{
@@ -28,10 +29,7 @@
 				margin-bottom: 1.5em;
 			}
 
-			p{
-				margin-bottom: 1em;
-			}
-			a{
+			a.leia-mais{
 				display: block;
 				text-align: right;		
 			}

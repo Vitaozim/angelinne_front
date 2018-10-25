@@ -33,6 +33,10 @@
 	background-image: url(../media/pattern_papel.jpg);
 	position: relative;
 	z-index: 2;
+
+	& + section{
+		padding: 5em 0;
+	}
 	
 	@mixin dimensoesBordas($altura){
 		&:before, &:after{
@@ -41,11 +45,11 @@
 		}
 
 		&:before{
-			top: -$altura;
+			top: -$altura + 1px;
 		}
 
 		&:after{
-			bottom: -$altura;
+			bottom: -$altura + 1px;
 		}
 
 	}
@@ -93,20 +97,20 @@
 		left: 0;
 		width: 100%;
 		height: 38px;
-		bottom: -38px;
+		bottom: -37px;
 		background-size: auto 38px;
 		background-repeat: repeat-x;
 		background-position: left top;
 		background-image: url(../media/borda_branca.png);
 		@media screen and (max-width: $tamanho-tablet){
 			height: 30px;
-			bottom: -30px;
+			bottom: -29px;
 			background-size: auto 30px;
 		}
 
 		@media screen and (max-width: $tamanho-smartphone){
 			height: 22px;
-			bottom: -22px;
+			bottom: -21px;
 			background-size: auto 22px;
 		}
 	}
@@ -127,7 +131,7 @@ $grid-gutter: 1.5rem;
 
 
 	&.g4{
-		$grid-gutter: 2.5rem;
+		// $grid-gutter: 2.5rem;
 		@include flex-wrap(wrap);
 
 		& > *{
@@ -140,6 +144,8 @@ $grid-gutter: 1.5rem;
 	}
 
 	&.g3{
+		@include flex-wrap(wrap);
+
 		& > *{
 			width: calc(33.333% - #{$grid-gutter * 2 / 3});
 			margin-right: $grid-gutter;
@@ -185,21 +191,35 @@ $grid-gutter: 1.5rem;
 
 	@media screen and (max-width: $tamanho-tablet-vertical){
 		$grid-gutter: 1em;
-		&.g4{
-			$grid-gutter: 2em;
+
+		&.g4, &.g3{
 			& > *{
 				width: calc(50% - #{$grid-gutter / 2});
 				margin-right: $grid-gutter;
-				&:nth-child(4n){
-					margin-right: $grid-gutter;
-				}
 
 				&:nth-child(2n){
 					margin-right: 0;
 				}
 			}
 		}
-		&.g3, &.g1e2, &.g2e1, &.g2{
+		&.g4{
+			// $grid-gutter: 2em;
+			& > *{
+				&:nth-child(4n){
+					margin-right: inherit;
+				}
+			}
+		}
+
+		&.g3{
+			& > *{
+				&:nth-child(3n){
+					margin-right: inherit;
+				}
+			}
+		}
+
+		&.g1e2, &.g2e1, &.g2{
 			@include display(block);
 
 			& > *{
@@ -217,62 +237,110 @@ $grid-gutter: 1.5rem;
 
 	@media screen and (max-width: $tamanho-smartphone){
 		$grid-gutter: 1em;
-		&.g4{
+		&.g4, &.g3{
 			@include display(block);
-			
 			& > *{
 				width: 100%;
 				max-width: 240px;
 				margin-right: auto;
-				&:nth-child(4n){
-					margin-right: auto;
-				}
-
 				&:nth-child(2n){
 					margin-right: auto;
 				}
-
 				margin: 0 auto;
+			}
+		}
 
+		&.g4{
+			& > *{
+				&:nth-child(4n){
+					margin-right: auto;
+				}
+			}
+		}
+
+		&.g3{
+			& > *{
+				&:nth-child(3n){
+					margin-right: auto;
+				}
 			}
 		}
 	}
-
-
 }
 
+
+
+
+/* REDES SOCIAIS DE ICONE */
+
+.redes-sociais-icons{
+	@include display(flex);
+	a{
+		text-decoration: none;
+		width: 2em;
+		height: 2em;
+		margin-right: 0.5em;
+		&:last-child{
+			margin-right: 0;
+		}
+		border-radius: 50%;
+		background-color: $azul-botoes;
+		@include display(flex);
+		@include justify-content(center);
+		@include align-items(center);
+		i{
+			font-size: 1em;
+			line-height: 1;
+			color: $azul-footer;
+		}
+
+	}
+}
 
 
 
 
 /* SECTION COM WASHES */
 .highlight-wash{
-	& > .container{
-		@include display(flex);
-		@include justify-content(space-between);
-		@media screen and (max-width: $tamanho-tablet-vertical){
-			@include flex-direction(column);
-			@include align-items(center);
+
+	@include display(flex);
+	@include justify-content(space-between);
+	@media screen and (max-width: $tamanho-tablet-vertical){
+		@include flex-direction(column);
+		@include align-items(center);
+	}
+
+	section{
+		@include flex-shrink(0);
+		width: 33.3333%;
+		margin-right: 0;
+		
+		// @include display(flex);
+		// @include flex-direction(column);
+		// @include align-items(center);
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+		background-position-y: 20px;
+		position: relative;
+		height: auto;
+
+		&:after{
+			content: '';
+			display: block;
+			padding-top: 73%;
 		}
 
-		section{
-			@include flex-shrink(0);
-			width: 320px;
-			margin-right: 0;
-			
-			// @include display(flex);
-			// @include flex-direction(column);
-			// @include align-items(center);
-			background-repeat: no-repeat;
-			background-size: 100% auto;
-			background-position-y: 20px;
-			position: relative;
-			height: 235px;
-			
+		.icone-texto{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+
 			.icone{
+				background-color: $azul-icon-washes;
 				width: 4em;
 				height: 4em;
-				margin: 0 auto;
+				margin: 0 auto 1.5em;
 				border-radius: 50%;
 				@include display(flex);
 				@include justify-content(center);
@@ -295,32 +363,51 @@ $grid-gutter: 1.5rem;
 			p{
 				font-size: 0.85em;
 				line-height: 1.3;
-				width: 85%;
+				padding: 0 5em;
 				margin: 0.5em auto;
 				text-align: center;
 			}
+		}
 
-			a.saiba-mais{
-				position: absolute;
-				bottom: 0;
-				left: 50%;
-				@include transform(translateX(-50%));
-				display: block;
-				background-color: white;
-				box-shadow: 2px 2px 0px 0px $azul-texto;
+		a.saiba-mais{
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			@include transform(translateX(-50%));
+			display: block;
+			background-color: white;
+			color: $azul;
+			box-shadow: 2px 2px 0px 0px transparentize($azul, 0.5);
+		}
+
+		@media screen and (max-width: $tamanho-note){
+			.icone-texto{
+				.icone{
+					margin-bottom: 0;
+				}
+				p{
+					padding: 0 3em;
+				}
 			}
+		}
 
-			@media screen and (max-width: $tamanho-tablet){
-				width: 260px;
-				height: 200px;
-			}
+		@media screen and (max-width: $tamanho-tablet-vertical){
+			width: 300px;
+			max-width: 100%;
+			margin-bottom: 2em;
+		}
 
-			@media screen and (max-width: $tamanho-tablet-vertical){
-				width: 320px;
-				height: 235px;
-				margin-bottom: 2em;
-			}
 
+		&:nth-child(1){
+			background-image: url(../media/wash_azul1.png);
+		}
+
+		&:nth-child(2){
+			background-image: url(../media/wash_azul2.png);
+		}
+
+		&:nth-child(3){
+			background-image: url(../media/wash_azul3.png);
 		}
 	}
 }
@@ -329,15 +416,16 @@ $grid-gutter: 1.5rem;
 
 
 
+
 /* PAINEL PRODUTOS */
 .produtos{
 
-	& > .g4{
+	& > .grid{
 		@include align-items(stretch);
 
 		.item{
 			background-color: #fff;
-			border: 1px solid hsl(0,0%,90%);
+			border: 1px solid $bordas-clarinhas;
 			padding: 1em 1em 3.5em;
 			margin-bottom: $grid-gutter;
 			position: relative;
@@ -362,15 +450,47 @@ $grid-gutter: 1.5rem;
 				height: auto;
 			}
 
-			p{
-				font-size: 0.8em;
+			h3{
+				font-size: 1em;
 				text-align: center;
 				font-style: italic;
+			}
+
+			p{
 				&.preco{
+					font-style: italic;
+					text-align: center;
+					font-size: 1em;
 					text-transform: uppercase;
-					margin: 0.5em 0;
+					margin: 0.2em 0;
 					color: $bege;
 					font-weight: bold;
+				}
+
+				&.descricao{
+					font-size: 0.9em;	
+				}
+			}
+
+			div.inscricoes{
+				margin: 1em 0;
+				p.abertas{
+					color: $verde-afirmacao;
+				}
+
+				p.encerradas{
+					color: $vermelho-negacao;
+				}
+
+				p.lista{
+					color: $bege;
+				}
+
+				p, p.abertas, p.encerradas, p.lista{
+					margin: 0;
+					font-size: 0.8em;
+					font-weight: bold;
+					i{color: $azul}
 				}
 			}
 
@@ -383,6 +503,26 @@ $grid-gutter: 1.5rem;
 					box-shadow: 2px 2px 0px 0px transparentize($azul, 0.5);
 					color: white;
 					background-color: $azul;
+				}
+			}
+		}
+	}
+
+	// CURSOS (grid de 3, estilos diferentes, mais info no card do item, etc.)
+	&.cursos{
+		.item{
+			h3{
+				text-align: left;
+				font-size: 1.3em;
+				font-weight: bold;
+				font-style: normal;
+			}
+
+			&.encerradas{
+				.center-bt a{
+					background-color: $rosa;
+					box-shadow: 2px 2px 0px 0px transparentize($rosa, 0.5);
+
 				}
 			}
 		}
@@ -458,18 +598,179 @@ $grid-gutter: 1.5rem;
 
 /* TOPO TITULO C/ SUBTITULO */
 .secao-de-titulo{
-	padding: 2em 0;
-	.container{
-		h2{
-			width: 100%;
-			text-align: center;
-			font-family: $fonte-especial;
+	
+	text-align: center;
+	& > h2{
+		width: 100%;
+		text-align: center;
+		font-family: $fonte-especial;
+	}
+	h3{
+		width: 50%;
+		@media screen and (max-width: $tamanho-tablet-vertical){width: 100%};
+		margin: 0 auto;
+		text-align: center;
+		font-style: italic;
+		color: $bege;
+	}
+}
+
+
+
+
+
+/* SLIDER DE VIDEO DEPOIMENTOS */
+
+.slider-videos{
+	position: relative;
+	@include display(flex);
+	@include justify-content(space-between);
+	@include align-items(center);
+	button{
+		padding: 0;
+		border: 0;
+		margin: 0;
+		display: inline-block;
+		width: 4em;
+		height: 6em;
+		vertical-align: middle;
+		i{
+			color: $azul;
+			font-size: 3.5em;
+			line-height: 1;
+			vertical-align: middle;
 		}
-		h3{
+		&:focus{
+			outline: none;
+		}
+		&:hover{
+			cursor: pointer;
+		}
+	}
+
+	.container-bx-videos{
+		display: inline-block;
+		vertical-align: middle;
+		width: calc(100% - 8em);
+		position: relative;		
+
+		ul.bx-videos{
+			display: block;
 			width: 100%;
-			text-align: center;
-			font-style: italic;
-			color: $bege;
+			
+			li{
+				display: inline-block;
+				width: 33%;
+				// margin-right: 0.5em;
+				border: 1px solid $bordas-clarinhas;
+				padding: 1em;
+				position: relative;
+				&:after{
+					font-family: $fontawesome;
+					content: '\f144';
+					color: white;
+					font-size: 2.5em;
+					pointer-events: none;
+					position: absolute;
+					top: 50%; left: 50%;
+					@include transform(translate(-50%,-50%));
+
+				}
+				a.thumb-video{
+					text-decoration: none;
+					color: inherit;
+					display: block;
+					background-size: cover;
+					background-position: center;
+					position: relative;
+					&:before{
+						content: "";
+						position: absolute;
+						width: 100%; height: 100%;
+						top: 0; left: 0;
+						background-color: rgba(0,0,0,0.3);
+						@include transition(background-color 0.2s linear);
+					}
+					&:after{
+						content: "";
+						display: block;
+						padding-top: 60%;
+					}
+
+					&:hover{
+						cursor: pointer;
+						&:before{
+							background-color: rgba(0,0,0,0.5);
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	@media screen and (max-width: $tamanho-tablet){
+		button{
+			width: 3em;
+			height: 4em;
+			i{
+				font-size: 3em;
+			}
+		}
+
+		.container-bx-videos{
+			width: calc(100% - 6em);
+		}
+	}
+
+
+	@media screen and (max-width: $tamanho-smartphone){
+		button{
+			width: 2em;
+			height: 3em;
+			i{
+				font-size: 2.5em;
+			}
+		}
+
+		.container-bx-videos{
+			width: calc(100% - 4em);
+		}
+	}
+}
+
+
+
+
+
+/* DUVIDAS FREQUENTES */
+
+.duvidas-frequentes{
+	margin-top: 4em;
+	ul{
+		width: 60%;
+		margin: 0 auto;
+		@media screen and (max-width: $tamanho-tablet-vertical){
+			width: 100%;
+		}
+		li{
+			margin-bottom: 0.5em;
+			padding: 0.5em 1em;
+			background-color: white;
+			border: 1px solid $bordas-clarinhas;
+			h4{
+				color: $bege;
+				font-style: italic;
+				i{
+					color: $azul;
+				}
+			}
+
+			article{
+				display: none;
+				font-size: 0.9em;
+				padding: 1em 0;
+
+			}
 		}
 	}
 }

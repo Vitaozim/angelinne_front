@@ -1,0 +1,83 @@
+#post-e-lateral{
+	& > .container{
+		@include display(flex);
+		@include justify-content(space-between);
+		section{
+			&.lista-posts, &.single-post{
+				width: calc(75% - 3em);
+			}
+
+			&.lista-posts{
+				ul{
+					li{
+						border: 1px solid $bordas-clarinhas;
+						margin-bottom: 3em;
+					}
+				}
+
+				.paginacao{
+					margin-top: 2em;
+					h5{
+						text-align: center;
+						font-weight: bold;
+						margin-bottom: 1em;
+					}
+					.links-paginas{
+						@include display(flex);
+						@include justify-content(center);
+						a{
+							text-decoration: none;
+							width: 2em;
+							height: 2em;
+							margin-right: 1em;
+							&:last-child{
+								margin-right: 0;
+							}
+							line-height: 2;
+							border-radius: 50%;
+							color: white;
+							text-align: center;
+							background-color: $rosa;
+							&.outras-paginas{
+								background-color: $bege;
+							}
+						}
+					}
+				}
+			}
+			&.lateral{
+				width: 25%;
+				aside{
+					margin-bottom: 2em;
+					&.buscar-posts{
+						form{
+							@include display(flex);
+							input[type="text"]{width: 75%}
+							input[type="button"]{width: 25%}
+						}
+						
+					}
+
+					&.perfil{
+						header{
+							img.foto-perfil{
+								display: block;
+								width: 100%;
+								height: auto;
+							}
+
+							h2{
+								text-align: center;
+								font-size: 2em;
+							}
+						}
+					}
+
+					&.redes-sociais-icons{
+						@include justify-content(center);
+					}
+				}
+			}
+		}
+	}
+}

@@ -7,6 +7,7 @@
 /* FONTES */
 $fonte-comum: 'Roboto', sans-serif;
 $fonte-especial: 'Quentin', cursive;
+$fontawesome: 'Font Awesome 5 Free';
 
 
 /* CORES */
@@ -14,10 +15,14 @@ $rosa: #d2a2a2;
 $bege: #b99d84;
 $azul-botoes: #eef5f7;
 $texto-footer: #6f7580; 
+$azul-icon-washes: #707d92;
 $azul: #84b7b9;
 $azul-texto: #5a5e66;
 $azul-footer: #4b515b;
 $azul-footer2: #40464f;
+$bordas-clarinhas: hsl(0, 0%, 90%);
+$verde-afirmacao: #89a95c;
+$vermelho-negacao: #a95c5c;
 
 
 
@@ -46,6 +51,50 @@ html, body{
 	}
 }
 
+
+/* ESTILO DE TEXTOS */
+article{
+	& > *{
+		margin-bottom: 1em;
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+	b,strong{
+		font-weight: bold;
+	}
+
+	em,i{
+		font-style: italic;
+	}
+
+	img{
+		margin-top: 2em;
+		margin-bottom: 2em;
+	}
+
+	a{
+		text-decoration: none;
+		color: $bege;
+		&:hover{
+			cursor: pointer;
+			text-decoration: underline;
+		}
+	}
+}
+
+body > section{
+	padding: 3em 0;
+}
+
+h2,h3,h4{
+	line-height: 1.2;
+}
+
+h5{
+	font-size: 0.9em;
+}
+
 h2{
 	font-family: $fonte-especial;
 	font-size: 2.5em;
@@ -67,12 +116,23 @@ h2{
 			display: block;
 		}
 	}
+}
 
-	&.raminhos{
+div.h2-com-raminhos{
+	width: 100%;
+	text-align: center;
+	h2{
+		display: inline-block;
+		position: relative;
+		padding: 0 2em;
+
+
 		&:before, &:after{
 			content: "";
-			vertical-align: middle;
-			display: inline-block;
+			position: absolute;
+			top: 50%;
+			@include transform(translateY(-50%));
+			display: block;
 			width: 2em;
 			height: 0.8em;
 			background-image: url(../media/sprite_fro.png);
@@ -81,32 +141,32 @@ h2{
 		}
 
 		&:before{
+			left: 0;
 			background-position: 0 110%;
 		}
 
 		&:after{
+			right: 0;
 			background-position: 40% 110%;
 		}
 
 		@media screen and (max-width: $tamanho-smartphone){
-			&:before, &:after{
+			padding: 0.8em 0 0;
+			&:before{
+				width: 4em;
+				top: 0;
+				left: 50%;
+				@include transform(translateX(-50%));
+				background-size: 190% auto;
+
+			}
+
+			&:after{
 				content: none;
 			}
 		}
+		
 	}
-}
-
-h5{
-	font-size: 0.9em;
-}
-
-button{
-	@include appearance(none);
-	font-family: inherit;
-	font-size: 1em;
-	color: inherit;
-	background-color: transparent;
-	border: none;
 }
 
 .center-bt{
@@ -134,6 +194,63 @@ a.leia-mais{
 	font-style: italic;
 	i{
 		color: $azul-texto;
+	}
+}
+
+.decoracao{
+	background-image: url(../media/sprite_fro.png);
+	background-size: 220% auto;
+	background-position: 100% 0;
+	width: 150px;
+	height: 45px;
+	margin: 1em auto;
+}
+
+/* FORMS */
+
+button{
+	font-size: 1em;
+}
+
+button, input[type="button"]{
+	@include appearance(none);
+	font-family: inherit;
+	padding: 0;
+	color: inherit;
+	background-color: transparent;
+	border: none;
+	&:hover{
+		cursor: pointer;
+	}
+	&:focus{
+		outline: none;
+	}
+}
+
+input, textarea{
+	font-size: 0.8em;
+	font-family: inherit;
+}
+input[type="text"], textarea{
+	border: 1px solid $bordas-clarinhas;
+	padding: 0.5em;
+	@include placeholder(){
+		font-style: italic;
+
+	}
+}
+
+
+
+
+input[type="button"]{
+	text-transform: uppercase;
+	padding: 0.5em 1em;
+	color: white;
+	background-color: $azul-texto;
+	@include transition(background-color 0.2s linear);
+	&:hover{
+		background-color: $azul-footer;
 	}
 }
 

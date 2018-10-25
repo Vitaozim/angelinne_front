@@ -26,30 +26,6 @@
 				width: auto;
 			}
 		}
-
-		.redes-sociais{
-			@include display(flex);
-			a{
-				text-decoration: none;
-				width: 2em;
-				height: 2em;
-				margin-right: 0.5em;
-				&:last-child{
-					margin-right: 0;
-				}
-				border-radius: 50%;
-				background-color: $azul-botoes;
-				@include display(flex);
-				@include justify-content(center);
-				@include align-items(center);
-				i{
-					font-size: 1em;
-					line-height: 1;
-					color: $azul-footer;
-				}
-
-			}
-		}
 	}
 	.faixa{
 		background-color: $azul-footer2;
