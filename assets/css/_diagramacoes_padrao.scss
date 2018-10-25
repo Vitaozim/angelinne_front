@@ -668,8 +668,13 @@ $grid-gutter: 1.5rem;
 				&:after{
 					font-family: $fontawesome;
 					content: '\f144';
-					color: white;
+					font-weight: 900;
+					color: inherit;
+					background-color: #fff;
 					font-size: 2.5em;
+					line-height: 1;
+					padding: 2px;
+					border-radius: 50%;
 					pointer-events: none;
 					position: absolute;
 					top: 50%; left: 50%;
