@@ -571,6 +571,7 @@ $grid-gutter: 1.5rem;
 			width: 100%;
 			@include display(flex);
 			@include justify-content(space-between);
+			@include align-items(center);
 			
 
 			p.autora{

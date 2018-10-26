@@ -35,7 +35,7 @@ $tamanho-smart-pequeno: 430px;
 
 
 
-/* ESTILOS */
+/* ESTILOS GLOBAIS */
 html, body{
 	font-size: 16px;
 	line-height: 1.5;
@@ -69,8 +69,13 @@ article{
 	}
 
 	img{
+		display: block;
+		max-width: 100%;
+		height: auto;
 		margin-top: 2em;
 		margin-bottom: 2em;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	a{
@@ -175,7 +180,7 @@ div.h2-com-raminhos{
 	@include justify-content(center);
 }
 
-a.saiba-mais{
+a.saiba-mais, button.saiba-mais{
 	font-size: 0.9em;
 	text-decoration: none;
 	font-weight: bold;
@@ -187,7 +192,7 @@ a.saiba-mais{
 	text-transform: uppercase;
 }
 
-a.leia-mais{
+a.leia-mais, button.leia-mais{
 	font-size: 0.9em;
 	color: $bege;
 	text-decoration: none;
@@ -208,11 +213,27 @@ a.leia-mais{
 
 /* FORMS */
 
-button{
-	font-size: 1em;
+input, textarea{
+	font-size: 0.8em;
+	font-family: inherit;
+	color: inherit;
+	background-color: transparent;
+	border: 1px solid $bordas-clarinhas;
+	padding: 0.7em 1em;
+	@include placeholder(){
+		color: lighten($azul-texto, 30%);
+		font-style: italic;
+	}
 }
 
-button, input[type="button"]{
+button{
+	font-size: 1em;
+	&:focus{
+		outline: none;
+	}
+}
+
+button, input[type="button"], input[type="submit"]{
 	@include appearance(none);
 	font-family: inherit;
 	padding: 0;
@@ -222,30 +243,12 @@ button, input[type="button"]{
 	&:hover{
 		cursor: pointer;
 	}
-	&:focus{
-		outline: none;
-	}
 }
 
-input, textarea{
-	font-size: 0.8em;
-	font-family: inherit;
-}
-input[type="text"], textarea{
-	border: 1px solid $bordas-clarinhas;
-	padding: 0.5em;
-	@include placeholder(){
-		font-style: italic;
-
-	}
-}
-
-
-
-
-input[type="button"]{
+input[type="button"], input[type="submit"]{
+	font-size: 0.7em;
+	font-weight: bold;
 	text-transform: uppercase;
-	padding: 0.5em 1em;
 	color: white;
 	background-color: $azul-texto;
 	@include transition(background-color 0.2s linear);
@@ -253,6 +256,8 @@ input[type="button"]{
 		background-color: $azul-footer;
 	}
 }
+
+
 
 .bx-wrapper{
 	border: none;

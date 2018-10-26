@@ -7,11 +7,14 @@
 				width: calc(75% - 3em);
 			}
 
+
+
+
 			&.lista-posts{
 				ul{
 					li{
 						border: 1px solid $bordas-clarinhas;
-						margin-bottom: 3em;
+						margin-bottom: 1.5em;
 					}
 				}
 
@@ -45,6 +48,213 @@
 					}
 				}
 			}
+
+
+
+
+			&.single-post{
+				.conteudo-post{
+					border: 1px solid $bordas-clarinhas;
+					padding: 1.5em;
+					header{
+						h1{
+							font-weight: bold;
+							font-size: 2.5em;
+							line-height: 1.2;
+							@media screen and (max-width: $tamanho-smartphone){
+								font-size: 1.8em;
+							}
+
+						}
+						p.quando-e-categorias{
+							font-size: 0.9em;
+							font-weight: bold;
+							font-style: italic;
+							color: $bege;
+							a{
+								text-decoration: none;
+								color: $azul;
+							}
+						}
+					}
+
+					article{
+						margin-top: 2em;
+						margin-bottom: 2em;
+					}
+
+					.redes-e-comments{
+						@include display(flex);
+						@include justify-content(space-between);
+						@media screen and (max-width: $tamanho-tablet-vertical){
+							@include flex-direction(column);
+							@include align-items(center);
+						}
+
+						.redes-sociais-post{
+							@media screen and (max-width: $tamanho-tablet-vertical){
+								margin-bottom: 3em;
+								@include display(flex);
+								@include justify-content(center);
+								@include flex-wrap(wrap);
+							}
+
+							a{
+								margin-right: 4px;
+								margin-bottom: 4px;
+								display: inline-block;
+								text-decoration: none;
+								font-size: 0.8em;
+								padding: 0.2em 0.6em;
+								color: white;
+								border-radius: 3px;
+								i{
+									margin-right: 2px;
+								}
+								@include transition(background-color 0.2s linear);
+								&:hover{cursor: pointer}
+								&.facebook{
+									background-color: #4167b4;
+									&:hover{
+										background-color: darken(#4167b4, 10%);
+									}
+								}
+								&.twitter{
+									background-color: #1da1f2;
+									&:hover{
+										background-color: darken(#1da1f2, 10%);
+									}
+								}
+								&.gplus{
+									background-color: #dd4b39;
+									&:hover{
+										background-color: darken(#dd4b39, 10%);
+									}
+								}
+								&.pinterest{
+									background-color: #bd081c;
+									&:hover{
+										background-color: darken(#bd081c, 10%);
+									}
+								}
+								&.whatsapp{
+									background-color: #128c7e;
+									&:hover{
+										background-color: darken(#128c7e, 10%);
+									}
+								}
+							}
+						}
+
+						a.n-comments{
+							color: $bege;
+							text-transform: uppercase;
+							font-weight: bold;
+							text-decoration: none;
+						}
+					}
+				}
+
+				p.tags{
+					margin-top: 1em;
+					font-size: 0.9em;
+					font-style: italic;
+					font-weight: bold;
+					a{
+						text-decoration: none;
+						color: $azul;
+						&:after{
+							color: $azul-texto;
+							content: ", ";
+						}
+						&:last-child:after{
+							content: none;
+						}
+					}
+				}
+
+
+				.area-comentario{
+					margin: 4em 0;
+					h2{}
+					form{
+						margin-bottom: 1em;
+						@include display(flex);
+						@include justify-content(space-between);
+						@include flex-wrap(wrap);
+						input{
+							width: calc(33.3333% - 2em / 3);
+							margin-bottom: 1em;
+						}
+						textarea{
+							width: 100%;
+							height: 250px;
+							resize: none;
+						}
+
+						.aviso-e-bt{
+							margin-top: 1em;
+							width: 100%;
+							@include display(flex);
+							@include justify-content(space-between);
+							.aviso{
+								font-size: 0.8em;
+								font-style: italic;
+							}
+						}
+					}
+
+					@media screen and (max-width: $tamanho-smartphone){
+						form{
+							input{
+								width: 100%;
+							}
+
+							.aviso-e-bt{
+								@include flex-direction(column);
+								@include align-items(center);
+								.aviso{
+									margin-bottom: 1em;
+								}
+							}
+						}
+					}
+				}
+
+
+				.lista-comments{
+					margin-top: 4em;
+					h2{
+						text-align: center;
+					}
+					ul{
+						li{
+							border: 1px solid $bordas-clarinhas;
+							padding: 1.2em;
+							margin-bottom: 1.5em;
+							h3{
+								font-size: 1.2em;
+								color: $bege;
+								font-weight: bold;
+								text-transform: uppercase;
+							}
+							p.data{
+								font-size: 0.9em;
+								font-weight: bold;
+								font-style: italic;
+							}
+
+							article{
+								margin: 1em 0 0;
+							}
+						}
+					}
+				}
+			}
+
+
+
+
 			&.lateral{
 				width: 25%;
 				aside{
@@ -52,8 +262,8 @@
 					&.buscar-posts{
 						form{
 							@include display(flex);
-							input[type="text"]{width: 75%}
-							input[type="button"]{width: 25%}
+							input[type="search"]{width: 70%}
+							input[type="button"]{width: 30%}
 						}
 						
 					}
@@ -71,6 +281,10 @@
 								font-size: 2em;
 							}
 						}
+
+						article{
+							text-align: center;
+						}
 					}
 
 					&.redes-sociais-icons{
@@ -78,6 +292,33 @@
 					}
 				}
 			}
+		}
+		@media screen and (max-width: $tamanho-tablet){
+			@include flex-wrap(wrap);
+			section{
+				&.lista-posts, &.single-post{
+					width: 100%;
+					margin-bottom: 3em;
+				}
+				&.lateral{
+					aside.buscar-posts form{
+						width: 100%;
+						margin-right: auto;
+						margin-left: auto;
+						max-width: 300px;
+					}
+					aside.perfil header img.foto-perfil{
+						width: 100%;
+						margin-right: auto;
+						margin-left: auto;
+						max-width: 300px;
+					}
+					width: 100%;
+					margin-right: auto;
+					margin-left: auto;
+					max-width: 400px;
+				}
+			}			
 		}
 	}
 }
