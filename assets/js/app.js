@@ -1,6 +1,28 @@
 jQuery(document).ready(function($) {
 
 	// Chamadas bxslider
+
+	var $mainSlider = $('#main-slider .bx-main');
+	var $mainPager = $('#main-slider .bx-nav button');
+
+	$mainSlider.bxSlider({
+		controls: false,
+		pager: false,
+		infiniteLoop: true,
+		onSlideAfter: function($slideElement, oldIndex, newIndex){
+			$mainPager.removeClass('ativo').eq(newIndex).addClass('ativo');
+		}
+	});
+
+	$mainPager
+	.first().addClass('ativo')
+	.end()
+	.on('click', function(event) {
+		var thisIndex = $mainPager.index($(this));
+		$mainSlider.goToSlide(thisIndex);
+	});
+
+
 	var $callBlogSlider = $('#call-blog .ultimos-posts .bx-slides-cont');
 	var $callBlogNav = $('#call-blog .ultimos-posts .bx-nav button');
 
@@ -8,17 +30,19 @@ jQuery(document).ready(function($) {
 		controls: false,
 		pager: false,
 		adaptativeHeight: true,
+		onSlideAfter: function($slideElement, oldIndex, newIndex){
+			$callBlogNav.removeClass('ativo').eq(newIndex).addClass('ativo');
+		}
+
 	});
 
 	$callBlogNav
-		.first().addClass('ativo')
-		.end()
-		.on('click', function(event) {
-			$callBlogNav.removeClass('ativo');
-			$(this).addClass('ativo');
-			var thisIndex = $callBlogNav.index($(this));
-			$callBlogSlider.goToSlide(thisIndex);
-		});
+	.first().addClass('ativo')
+	.end()
+	.on('click', function(event) {
+		var thisIndex = $callBlogNav.index($(this));
+		$callBlogSlider.goToSlide(thisIndex);
+	});
 
 
 	var $videosDepos = $('.slider-videos .bx-videos');

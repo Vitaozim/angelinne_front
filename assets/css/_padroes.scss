@@ -7,7 +7,7 @@
 /* FONTES */
 $fonte-comum: 'Roboto', sans-serif;
 $fonte-especial: 'Quentin', cursive;
-$fontawesome: 'Font Awesome 5 Free';
+$fontawesome: 'FontAwesome';
 
 
 /* CORES */
@@ -37,17 +37,17 @@ $tamanho-smart-pequeno: 430px;
 
 /* ESTILOS GLOBAIS */
 html, body{
-	font-size: 16px;
+	font-size: 17px;
 	line-height: 1.5;
 	font-family: $fonte-comum;
 	color: $azul-texto;
 	overflow-x: hidden;
 	@media screen and (max-width: $tamanho-tablet){
-		font-size: 15px;
+		font-size: 16px;
 	}
 
 	@media screen and (max-width: $tamanho-smartphone){
-		font-size: 14px;
+		font-size: 15px;
 	}
 }
 

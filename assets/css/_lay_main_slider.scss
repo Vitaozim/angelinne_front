@@ -1,10 +1,40 @@
 section#main-slider{
+	padding: 0;
 	width: 100%;
-	height: 40vw;
-	background-image: url(../../placeholders/fotosangela/img1.jpg);
-	background-size: cover;
-	background-position: top center;
-	// @media screen and (max-width: $tamanho-tablet-vertical){height: 35vw}
-	// @media screen and (max-width: $tamanho-smartphone){height: 50vw}
+	position: relative;
+	ul.bx-main{
+		width: 100%;
+		li{
+			width: 100%;
+			height: 40vw;
+			background-size: cover;
+			background-position: center center;
+		}
+	}
 
+	.bx-nav{
+		width: 100%;
+		position: absolute;
+		z-index: 2;
+		bottom: 3em;
+		@media screen and (max-width: $tamanho-tablet){
+			bottom: 2em;
+		}
+
+		@media screen and (max-width: $tamanho-tablet-vertical){
+			bottom: 1.5em;
+		}
+
+		@media screen and (max-width: $tamanho-smartphone){
+			bottom: 1.5em;
+		}
+		
+		button{
+			box-shadow: 0px 2px 8px 4px rgba(0,0,0,0.6);
+			background-color: #fff;
+			&.ativo{
+				background-color: $rosa;
+			}
+		}
+	}
 }

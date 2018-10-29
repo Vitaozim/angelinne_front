@@ -585,12 +585,25 @@ $grid-gutter: 1.5rem;
 			a.leia-mais{display: block;}
 
 			@media screen and (max-width: $tamanho-smartphone){
-				@include display(block);
+				@include flex-direction(column);
 				a.leia-mais{margin-top: 1em}
 			}
 		}
-
 	}
+
+	@media screen and (max-width: $tamanho-smartphone){
+		@include display(block);
+		img.thumb{
+			width: 100%;
+			max-width: 180px;
+			margin: 0 auto 1em;
+		}
+
+		article{
+			width: 100%;
+		}
+	}
+
 }
 
 
@@ -613,6 +626,36 @@ $grid-gutter: 1.5rem;
 		text-align: center;
 		font-style: italic;
 		color: $bege;
+	}
+}
+
+
+
+
+
+/* ESTILO PADRAO BX-NAV */
+
+.bx-nav{
+	@include display(flex);
+	@include justify-content(center);
+	button{
+
+		margin-right: 0.6em;
+		&:last-child{
+			margin-right: 0;
+		}
+		text-decoration: none;
+		line-height: 0;
+		color: transparent;
+		display: block;
+		width: 0.8em;
+		height: 0.8em;
+		border-radius: 50%;
+		background-color: $rosa;
+		@include transition(background-color 0.2s linear);
+		&.ativo{
+			background-color: $azul;
+		}
 	}
 }
 
@@ -669,12 +712,14 @@ $grid-gutter: 1.5rem;
 				&:after{
 					font-family: $fontawesome;
 					content: '\f144';
-					font-weight: 900;
 					color: inherit;
 					background-color: #fff;
 					font-size: 2.5em;
 					line-height: 1;
-					padding: 2px;
+					text-align: center;
+					height: 1em;
+					width: 1em;
+					// padding: 2px;
 					border-radius: 50%;
 					pointer-events: none;
 					position: absolute;
@@ -768,6 +813,9 @@ $grid-gutter: 1.5rem;
 				font-style: italic;
 				i{
 					color: $azul;
+				}
+				&:hover{
+					cursor: pointer;
 				}
 			}
 

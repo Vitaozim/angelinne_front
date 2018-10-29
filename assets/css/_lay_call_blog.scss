@@ -25,27 +25,6 @@
 
 			.bx-nav{
 				margin-top: 1em;
-				@include display(flex);
-				@include justify-content(center);
-				button{
-
-					margin-right: 0.6em;
-					&:last-child{
-						margin-right: 0;
-					}
-					text-decoration: none;
-					line-height: 0;
-					color: transparent;
-					display: block;
-					width: 0.8em;
-					height: 0.8em;
-					border-radius: 50%;
-					background-color: $rosa;
-					@include transition(background-color 0.2s linear);
-					&.ativo{
-						background-color: $azul;
-					}
-				}
 			}
 		}
 	}
