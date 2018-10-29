@@ -3,12 +3,12 @@
 	padding-top: 3em;
 	
 	background-image: 
-		url(../media/aquarela_topo.png),
 		url(../media/enfeites_topo.png),
+		url(../media/aquarela_topo.png),
 		url(../media/pattern_papel.jpg);
 	background-size: 
-		2100px auto,
 		1200px auto,
+		2100px auto,
 		auto;
 	background-position: 
 		top center,
@@ -21,22 +21,22 @@
 
 	@media screen and (max-width: $tamanho-note){
 		background-size: 
-			175% auto,
 			100% auto,
+			175% auto,
 			auto;
 	}
 
 	@media screen and (max-width: $tamanho-tablet-vertical){
 		background-size: 
-			1400px auto,
 			800px auto,
+			1400px auto,
 			auto;
 	}
 
 	@media screen and (max-width: $tamanho-smartphone){
 		background-size: 
-			1050px auto,
 			600px auto,
+			1050px auto,
 			auto;
 	}
 
