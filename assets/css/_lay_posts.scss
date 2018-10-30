@@ -15,6 +15,47 @@
 					li{
 						border: 1px solid $bordas-clarinhas;
 						margin-bottom: 1.5em;
+						position: relative;
+						background-color: #fff;
+						&:before{
+							content: "";
+							position: absolute;
+							width: 500px;
+							height: 300px;
+							display: block;
+							background-repeat: no-repeat;
+							background-position: top center;
+							background-size: contain;
+							z-index: -1;
+						}
+						&:nth-child(1){
+							&:before{
+								background-image: url(../media/nuvem_amarelo.png);
+								top: -60px;
+								left: -60px;
+							}
+						}
+						&:nth-child(2){
+							&:before{
+								background-image: url(../media/nuvem_vermelha.png);
+								top: -120px;
+								right: -120px;
+							}
+						}
+						&:nth-child(3){
+							&:before{
+								background-image: url(../media/nuvem_azul.png);
+								top: -150px;
+								left: -200px;
+							}
+						}
+						&:nth-child(4){
+							&:before{
+								background-image: url(../media/nuvem_verde.png);
+								bottom: -50px;
+								right: -160px;
+							}
+						}
 					}
 				}
 

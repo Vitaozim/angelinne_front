@@ -54,6 +54,7 @@
 
 	}
 	&:before, &:after{
+		background-image: url(../media/borda_secao.png);
 		content: "";
 		display: block;
 		position: absolute;
@@ -63,13 +64,14 @@
 
 	}
 	&:before{
-		background-position: left bottom;
-		background-image: url(../media/borda_secao1.png);
+		@include transform(rotate(180deg));
+		// background-position: left bottom;
+		// background-image: url(../media/borda_secao1.png);
 	}
 
 	&:after{
-		background-position: right top;
-		background-image: url(../media/borda_secao2.png);
+		// background-position: right top;
+		// background-image: url(../media/borda_secao2.png);
 	}
 
 	@include dimensoesBordas(38px);
@@ -620,6 +622,8 @@ $grid-gutter: 1.5rem;
 		font-family: $fonte-especial;
 	}
 	h3{
+		font-size: 1em;
+		font-weight: normal;
 		width: 50%;
 		@media screen and (max-width: $tamanho-tablet-vertical){width: 100%};
 		margin: 0 auto;
@@ -811,6 +815,8 @@ $grid-gutter: 1.5rem;
 			h4{
 				color: $bege;
 				font-style: italic;
+				font-weight: normal;
+				font-size: 1em;
 				i{
 					color: $azul;
 				}

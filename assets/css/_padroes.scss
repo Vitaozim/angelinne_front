@@ -93,7 +93,16 @@ body > section{
 }
 
 h2,h3,h4{
+	font-weight: bold;
 	line-height: 1.2;
+}
+
+h3{
+	font-size: 2em;
+}
+
+h4{
+	font-size: 1.4em;
 }
 
 h5{
@@ -104,6 +113,7 @@ h2{
 	font-family: $fonte-especial;
 	font-size: 2.5em;
 	line-height: 1.2;
+	font-weight: normal;
 	@media screen and (max-width: $tamanho-tablet-vertical){
 		font-size: 2em;
 	}
@@ -251,6 +261,7 @@ input[type="button"], input[type="submit"]{
 	text-transform: uppercase;
 	color: white;
 	background-color: $azul-texto;
+	padding: 0.7em 1em;
 	@include transition(background-color 0.2s linear);
 	&:hover{
 		background-color: $azul-footer;
