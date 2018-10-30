@@ -1,5 +1,68 @@
-#titulo-loja{
-	
+#barra-fixa{
+	padding: 0;
+	position: fixed;
+	left: 0;
+	width: 100%;
+	height: 2.5em;
+	z-index: 4;
+	background-color: $azul-footer;
+
+	.container{
+		@include display(flex);
+		@include justify-content(space-between);
+		@include align-items(center);
+		height: 100%;
+
+		a{
+			color: $azul-botoes;
+			text-transform: uppercase;
+			font-size: 0.8em;
+			line-height: 1;
+			i{
+				color: $azul;
+				font-size: 1rem;
+				&[data-n-itens]{
+					position: relative;
+					margin-right: 0.7em;
+					&:after{
+						content: attr(data-n-itens);
+						font-family: $fonte-comum;
+						font-size: 0.7em;
+						line-height: 1;
+						padding: 3px;
+						background-color: darken($azul-footer, 20%);
+						color: $azul-botoes;
+						border-radius: 4px;
+						position: absolute;
+						z-index: 2;
+						top: 0;
+						right: 0;
+						@include transform(translate(60%, -50%));
+					}
+				}
+			}
+
+			@media screen and (max-width: $tamanho-tablet){
+				span{
+					display: none;
+				}
+			}
+
+		}
+
+		.conj-links{
+			a{
+				margin-right: 2em;
+				@media screen and (max-width: $tamanho-tablet){
+					margin-right: 1em;
+				}
+
+				&:last-child{
+					margin-right: 0;
+				}
+			}
+		}
+	}
 }
 
 

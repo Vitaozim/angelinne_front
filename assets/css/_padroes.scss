@@ -53,19 +53,29 @@ html, body{
 
 
 /* ESTILO DE TEXTOS */
+
+b,strong{
+	font-weight: bold;
+}
+
+em,i{
+	font-style: italic;
+}
+
+a{
+	text-decoration: none;
+	color: $bege;
+	&:hover{
+		cursor: pointer;
+		text-decoration: underline;
+	}
+}
 article{
 	& > *{
 		margin-bottom: 1em;
 		&:last-child{
 			margin-bottom: 0;
 		}
-	}
-	b,strong{
-		font-weight: bold;
-	}
-
-	em,i{
-		font-style: italic;
 	}
 
 	img{
@@ -77,15 +87,11 @@ article{
 		margin-left: auto;
 		margin-right: auto;
 	}
+	
+}
 
-	a{
-		text-decoration: none;
-		color: $bege;
-		&:hover{
-			cursor: pointer;
-			text-decoration: underline;
-		}
-	}
+a{
+	text-decoration: none;
 }
 
 body > section{
