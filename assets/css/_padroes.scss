@@ -54,6 +54,13 @@ html, body{
 
 /* ESTILO DE TEXTOS */
 
+sup{
+	vertical-align: super;
+}
+
+sub{
+	vertical-align: sub;
+}
 b,strong{
 	font-weight: bold;
 }
@@ -126,6 +133,7 @@ h2{
 
 
 	&.flor-azul{
+		text-align: center;
 		&:before{
 			content: "";
 			width: 150px;
@@ -206,6 +214,15 @@ a.saiba-mais, button.saiba-mais{
 	color: white;
 	background-color: $azul;
 	text-transform: uppercase;
+	&.rosa{
+		background-color: $rosa;
+		box-shadow: 2px 2px 0px 0px transparentize($rosa, 0.5);
+	}
+
+	&.bege{
+		background-color: $bege;
+		box-shadow: 2px 2px 0px 0px transparentize($bege, 0.5);
+	}
 }
 
 a.leia-mais, button.leia-mais{

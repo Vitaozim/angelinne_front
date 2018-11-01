@@ -667,6 +667,67 @@ $grid-gutter: 1.5rem;
 
 
 
+
+/* BOTAO DE CHAMADA DO VIDEO EM FANCYBOX */
+
+.bt-video-fancybox{
+	
+	border: 1px solid $bordas-clarinhas;
+	padding: 1em;
+	position: relative;
+	&:after{
+		font-family: $fontawesome;
+		content: '\f144';
+		color: inherit;
+		background-color: #fff;
+		font-size: 2.5em;
+		line-height: 1;
+		text-align: center;
+		height: 1em;
+		width: 1em;
+		// padding: 2px;
+		border-radius: 50%;
+		pointer-events: none;
+		position: absolute;
+		top: 50%; left: 50%;
+		@include transform(translate(-50%,-50%));
+
+	}
+	a.thumb-video{
+		text-decoration: none;
+		color: inherit;
+		display: block;
+		background-size: cover;
+		background-position: center;
+		position: relative;
+		&:before{
+			content: "";
+			position: absolute;
+			width: 100%; height: 100%;
+			top: 0; left: 0;
+			background-color: rgba(0,0,0,0.3);
+			@include transition(background-color 0.2s linear);
+		}
+		&:after{
+			content: "";
+			display: block;
+			padding-top: 60%;
+		}
+
+		&:hover{
+			cursor: pointer;
+			&:before{
+				background-color: rgba(0,0,0,0.5);
+			}
+		}
+	}
+}
+
+
+
+
+
+
 /* SLIDER DE VIDEO DEPOIMENTOS */
 
 .slider-videos{
@@ -706,59 +767,10 @@ $grid-gutter: 1.5rem;
 			display: block;
 			width: 100%;
 			
-			li{
+			li.bt-video-fancybox{
 				display: inline-block;
 				width: 33%;
 				// margin-right: 0.5em;
-				border: 1px solid $bordas-clarinhas;
-				padding: 1em;
-				position: relative;
-				&:after{
-					font-family: $fontawesome;
-					content: '\f144';
-					color: inherit;
-					background-color: #fff;
-					font-size: 2.5em;
-					line-height: 1;
-					text-align: center;
-					height: 1em;
-					width: 1em;
-					// padding: 2px;
-					border-radius: 50%;
-					pointer-events: none;
-					position: absolute;
-					top: 50%; left: 50%;
-					@include transform(translate(-50%,-50%));
-
-				}
-				a.thumb-video{
-					text-decoration: none;
-					color: inherit;
-					display: block;
-					background-size: cover;
-					background-position: center;
-					position: relative;
-					&:before{
-						content: "";
-						position: absolute;
-						width: 100%; height: 100%;
-						top: 0; left: 0;
-						background-color: rgba(0,0,0,0.3);
-						@include transition(background-color 0.2s linear);
-					}
-					&:after{
-						content: "";
-						display: block;
-						padding-top: 60%;
-					}
-
-					&:hover{
-						cursor: pointer;
-						&:before{
-							background-color: rgba(0,0,0,0.5);
-						}
-					}
-				}
 			}
 		}
 	}

@@ -1,0 +1,155 @@
+/* fundo escuro padrao */
+
+.fundo-escuro{
+	background-color: rgba(0,0,0,0.7);
+}
+
+
+#welcome-curso{
+	padding: 0;
+	background-size: cover;
+	background-attachment: fixed;
+	// background-position: center center;
+	.fundo-escuro{
+		padding: 5em 0 2em;
+		.container{
+			
+			@include display(flex);
+			@include flex-direction(column);
+			@include align-items(center);
+			h3{
+				font-family: $fonte-especial;
+				font-weight: normal;
+				text-align: center;
+				color: white;
+				margin-bottom: 0em;
+			}
+
+			h2{
+				font-family: $fonte-comum;
+				font-weight: bold;
+				color: white;
+				text-align: center;
+				font-size: 3em;
+				margin-bottom: 2rem;
+
+			}
+
+			p.inscricoes{
+				text-transform: uppercase;
+				text-align: center;
+				color: white;
+				i{
+					color: $azul;
+				}
+				margin-bottom: 2rem;
+
+			}
+
+			a.saiba-mais{
+				font-size: 1.1em;
+				margin-bottom: 4rem;
+
+			}
+
+			button.revelar{
+				text-transform: uppercase;
+				text-align: center;
+				color: white;
+				display: block;
+				i{
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+
+#sobre-o-curso{
+	.container{
+		article.descricao{
+			h2{
+				text-align: center;
+				margin-bottom: 0.5em;
+			}
+		}
+	}
+}
+
+#o-que-vai-aprender{
+	.container{
+
+		h2.flor-azul{
+			margin-bottom: 1em;
+		}
+		ol.colunas2{
+			@include column-count(2);
+			@include column-gap(1em);
+			li{
+				margin-bottom: 2em;
+				counter-increment: aprendizado;
+				&:before{
+					content: '0' counter(aprendizado) '. ';
+					color: $rosa;
+					font-weight: bold;
+				}
+
+				&:nth-child(n+10):before{
+					content: counter(aprendizado) '. ';
+				}
+			}
+		}
+	}
+}
+
+#vantagens{
+	a.comecar-agora{
+		font-size: 1.1em;
+		position: absolute;
+		bottom: -1.5em;
+		left: 50%;
+		@include transform(translateX(-50%));
+		z-index: 3;
+	}
+}
+
+#depoimentos{
+	h2.flor-azul{
+		margin-bottom: 1em;
+	}
+}
+
+#area-comprar{
+	padding: 0;
+	background-size: cover;
+	background-attachment: fixed;
+	.fundo-escuro{
+		padding: 7em 0 5em;
+		.container{
+			padding: 0 6em;
+			.box-preco{
+				width: 100%;
+				background-color: white;
+				padding: 1em;
+				.preco{
+					.preco-full{
+						background-color: #dee6ec;
+						padding: 1em;
+						p{
+							&.preco-antigo{font-size: 1.5em;}
+							&.preco-novo{
+								sup.cifra, sub.decimais{
+									font-size: 3em;
+								}
+								span.numero{
+									font-size: 8em;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
