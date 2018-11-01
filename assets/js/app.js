@@ -92,8 +92,9 @@ jQuery(document).ready(function($) {
 
 	// Subscribe newsletter
 	$('.inscrever-newsletter').on('click', function(event) {
+		var thisTarget = $(this).data('target');
 		event.preventDefault();
-		$.fancybox.open($('#modal-newsletter'));
+		$.fancybox.open($(thisTarget));
 	});
 
 

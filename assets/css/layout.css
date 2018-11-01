@@ -1183,12 +1183,13 @@ input[type="button"], input[type="submit"] {
   background-color: transparent;
   box-shadow: none; }
 
-/* ESTILO PADRAO DO FANCYBOX DE NEWSLETTER */
-#modal-newsletter {
+/* ESTILO PADRAO DO FANCYBOX DAS INSCRICOES */
+.modal-inscricao-curso {
+  display: none;
   background-color: #fff;
   width: 500px; }
   @media screen and (max-width: 820px) {
-    #modal-newsletter {
+    .modal-inscricao-curso {
       width: 400px;
       max-width: calc(100% - 1em); } }
 

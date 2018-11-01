@@ -303,8 +303,10 @@ input[type="button"], input[type="submit"]{
 
 
 
-/* ESTILO PADRAO DO FANCYBOX DE NEWSLETTER */
-#modal-newsletter{
+/* ESTILO PADRAO DO FANCYBOX DAS INSCRICOES */
+
+.modal-inscricao-curso{
+	display: none;
 	background-color: #fff;
 	width: 500px;
 	@media screen and (max-width: $tamanho-tablet-vertical){
@@ -312,6 +314,7 @@ input[type="button"], input[type="submit"]{
 		max-width:  calc(100% - 1em);
 	}
 }
+
 
 
 
