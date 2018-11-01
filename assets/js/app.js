@@ -87,6 +87,23 @@ jQuery(document).ready(function($) {
 		$faq.find('article').not($thisArticle).slideUp();
 		$thisArticle.slideToggle();
 	});
+
+
+
+	// Subscribe newsletter
+	$('.inscrever-newsletter').on('click', function(event) {
+		event.preventDefault();
+		$.fancybox.open($('#modal-newsletter'));
+	});
+
+
+
+	// botao revela curso
+	var cursoPageSaibaMais = $('#welcome-curso .revelar');
+	var contentASerRevelado = $('#sobre-o-curso');
+	cursoPageSaibaMais.on('click', function(event) {
+		$('html').animate({'scrollTop': contentASerRevelado.offset().top}, 1000);
+	});
 });
 
 

@@ -300,6 +300,22 @@ input[type="button"], input[type="submit"]{
 	box-shadow: none;
 }
 
+
+
+
+/* ESTILO PADRAO DO FANCYBOX DE NEWSLETTER */
+#modal-newsletter{
+	background-color: #fff;
+	width: 500px;
+	@media screen and (max-width: $tamanho-tablet-vertical){
+		width: 400px;
+		max-width:  calc(100% - 1em);
+	}
+}
+
+
+
+
 /* KEYFRAMES */
 @include keyframes(aparece){
 	0%{opacity: 0;}

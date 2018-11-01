@@ -35,7 +35,18 @@
 
 			}
 
-			p.inscricoes{
+			@media screen and (max-width: $tamanho-smartphone){
+				h3{
+					font-size: 1.5em;
+				}
+
+				h2{
+					font-size: 2.2em;
+				}
+			}
+
+
+			p.inscricoes, a.lista{
 				text-transform: uppercase;
 				text-align: center;
 				color: white;
@@ -43,12 +54,36 @@
 					color: $azul;
 				}
 				margin-bottom: 2rem;
+			}
 
+			a.lista{
+				display: none;
+				margin-bottom: 2rem;
+			}
+
+			p.inscricoes.encerradas{
+				i{
+					color: $vermelho-negacao;
+				}
+				color: $rosa;
+				font-weight: bold;
+				margin-bottom: 0;
+
+				& + a.lista{
+					display: block;
+				}
 			}
 
 			a.saiba-mais{
-				font-size: 1.1em;
+				font-size: 1.5em;
+				padding: 0.4em 2em;
 				margin-bottom: 4rem;
+				@media screen and (max-width: $tamanho-smartphone){
+					font-size: 1.1em;
+					padding: 1em 1.2em;
+
+				}
+
 
 			}
 
@@ -59,7 +94,15 @@
 				display: block;
 				i{
 					display: block;
+					@include transition(transform 0.2s ease-in-out); 
 				}
+
+				&:hover{
+					i{
+						@include transform(translateY(5px));
+					}
+				}
+
 			}
 		}
 	}
@@ -86,6 +129,11 @@
 		ol.colunas2{
 			@include column-count(2);
 			@include column-gap(1em);
+			@media screen and (max-width: $tamanho-tablet-vertical){
+				@include column-count(1);
+				@include column-gap(0);
+			}
+
 			li{
 				margin-bottom: 2em;
 				counter-increment: aprendizado;
@@ -104,13 +152,14 @@
 }
 
 #vantagens{
-	a.comecar-agora{
-		font-size: 1.1em;
+	.center-bt{
 		position: absolute;
-		bottom: -1.5em;
-		left: 50%;
-		@include transform(translateX(-50%));
+		bottom: -1.7em;
 		z-index: 3;
+
+		a.comecar-agora{
+			font-size: 1.1em;
+		}
 	}
 }
 
@@ -128,25 +177,103 @@
 		padding: 7em 0 5em;
 		.container{
 			padding: 0 6em;
+			@media screen and (max-width: $tamanho-tablet){padding: 0 4em;}
+			@media screen and (max-width: $tamanho-tablet-vertical){padding: 0 2em;}
+			@media screen and (max-width: $tamanho-smartphone){padding: 0 1em;}
 			.box-preco{
 				width: 100%;
 				background-color: white;
-				padding: 1em;
+				padding: 1.5em;
+				@include align-items(stretch);
+
 				.preco{
+					margin-bottom: 0;
 					.preco-full{
 						background-color: #dee6ec;
-						padding: 1em;
-						p{
-							&.preco-antigo{font-size: 1.5em;}
-							&.preco-novo{
-								sup.cifra, sub.decimais{
-									font-size: 3em;
+						padding: 1.5em;
+						@include display(flex);
+						@include justify-content(center);
+						.centered{
+							@include display(flex);
+							@include flex-direction(column);
+							p{
+								line-height: 1;
+
+								&.preco-antigo{
+									font-size: 1.2em;
 								}
-								span.numero{
-									font-size: 8em;
+								&.preco-novo{
+									line-height: 0.7;
+									margin: 2em 0;
+
+									sup.cifra{
+										font-size: 2.5em;
+										vertical-align: top;
+									}
+									span.numero{
+										font-size: 7em;
+										@media screen and (max-width: $tamanho-note){font-size: 4.5em;}
+										@media screen and (max-width: $tamanho-tablet){font-size: 4.5em;}
+										@media screen and (max-width: $tamanho-tablet-vertical){font-size: 7em;}
+										@media screen and (max-width: $tamanho-smartphone){font-size: 4em;}
+									}
+
+									sub.decimais{
+										font-size: 2.5em;
+									}
+								}
+								&.a-vista{
+									text-align: right;
+									font-size: 2.5em;
+									font-family: $fonte-especial;
 								}
 							}
 						}
+						
+					}
+
+					p.parcela{
+						text-align: center;
+						font-family: $fonte-especial;
+						font-size: 1.5em;
+						margin-top: 1rem;
+						span.preco{
+							font-family: $fonte-comum;
+						}
+					}
+				}
+
+				.vantagens-comprar{
+					margin-bottom: 0;
+					position: relative;
+					padding-bottom: 5em;
+					h2.flor-azul{
+						text-align: center;
+						font-size: 2em;
+						margin-bottom: 1em;
+					}
+					ul.mini-vantagens{
+						margin-bottom: 2em;
+						li{
+							color: $bege;
+							font-style: italic;
+							i{
+								color: $azul;
+								font-style: normal;
+							}
+						}
+					}
+
+					a.comprar{
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						padding: 0.6em 1em;
+						letter-spacing: 1px;
+						display: block;
+						width: 100%;
+						text-align: center;
+						font-size: 1.3em;
 					}
 				}
 			}

@@ -484,11 +484,11 @@ $grid-gutter: 1.5rem;
 					color: $vermelho-negacao;
 				}
 
-				p.lista{
+				a.lista{
 					color: $bege;
 				}
 
-				p, p.abertas, p.encerradas, p.lista{
+				p, p.abertas, p.encerradas, a.lista{
 					margin: 0;
 					font-size: 0.8em;
 					font-weight: bold;
